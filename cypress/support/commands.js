@@ -25,3 +25,13 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 require('cypress-xpath');
+
+Cypress.Commands.add('submitLog',(A)=>{
+    if(A=='login'){
+        cy.get('[data-react-toolbox="app-bar"] button').click();
+    }
+    else{
+        cy.get('[data-react-toolbox="app-bar"] button').click();
+        cy.get('ul a').click();
+    }
+})
