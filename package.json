@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "test": "cypress open",
+    "test-reporter": "cypress run --browser chrome --spec"
+  },
+  "license": "MIT",
+  "author": "ValentinoHuanca",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "cypress": "^13.13.1",
+    "cypress-multi-reporters": "^1.6.4",
+    "junit-report-merger": "^7.0.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
