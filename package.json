@@ -6,6 +6,7 @@
   "license": "MIT",
   "author": "ValentinoHuanca",
   "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.5",
     "@faker-js/faker": "^8.4.1",
     "cypress": "^13.13.1",
     "cypress-multi-reporters": "^1.6.4",

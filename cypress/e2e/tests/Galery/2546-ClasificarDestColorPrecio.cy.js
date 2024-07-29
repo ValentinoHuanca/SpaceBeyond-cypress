@@ -13,4 +13,9 @@ describe('TS',()=>{
         galery.ColorRandom()
         cy.get('.Box__box___2XzJ2.Gallery__items-box___2hOZl [data-react-toolbox="card"]').should('be.visible')
     })
+    it('TC3',()=>{
+        galery.sliderRandom()
+        cy.get('.Box__box___2XzJ2.Gallery__items-box___2hOZl [data-react-toolbox="card"]').should('be.visible')
+        
+    })
 })
