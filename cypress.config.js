@@ -24,6 +24,9 @@ module.exports = defineConfig({
     baseUrl:'https://demo.testim.io'
   },
   env:{
+    datepicker:{
+      months:['June','July','August','September','October','November','december']
+    },
     Login:{
       username:'John',
       password:'correcto123'
