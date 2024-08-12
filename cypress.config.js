@@ -7,10 +7,10 @@ module.exports = defineConfig({
   reporterOptions:{
     reporterEnabled:'spec,mocha-junit-reporter,mochawesome',
     mochaJunitReporterReporterOptions:{
-      mochaFile:'result/test-results.xml'
+      mochaFile:'result/test-results-[hash].xml'
     },
     mochawesomeReporterOptions:{
-      reportFilename: 'customReportFilename',
+      reportFilename: '[status]-[name]-report',
       quiet: true,
       html:false,
       json:true
