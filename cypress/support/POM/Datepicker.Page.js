@@ -7,6 +7,7 @@ class DateP {
         inputDeparting:()=>cy.get('[class="theme__input___qUQeP theme__input___1TiDt theme__input___1TiDt"]').eq(0),
         inputReturning:()=>cy.get('[class="theme__input___qUQeP theme__input___1TiDt theme__input___1TiDt"]').eq(1),
         inputNextMonth:()=>cy.get('[id="right"]'),
+        inputLastMonth:()=>cy.get('[id="left"]'),
         monthName:()=>cy.get('[class="theme__title___2Ue3-"]'),
         dayMonth:()=>cy.get('[class="theme__day___3cb3g"]'),
         dayActive:()=>cy.get('.theme__day___3cb3g.theme__active___2k63V span'),
@@ -323,6 +324,93 @@ class DateP {
         this.get.inputChildren().click()
         let iChil=randomNumInt(6,9)
         this.get.listAC().eq(`${iChil}`).click()
+    }
+    dayDREq(){
+        const {months}= Cypress.env('datepicker')
+        let monthsL=[30,31,31,30,31,30,31]
+        let year='2024'
+        let monthNameD=""
+        let dayDep,i
+        let monNameRS=""
+        //Departing----------------------------------------------------
+        this.get.inputDeparting().click()
+        let clickRandom=randomNumInt(0,3)
+        let con=0
+        let selectDay,selectDay1
+        while(con!=clickRandom){
+            con++
+            this.get.inputNextMonth().eq(0).click()
+        }
+        if(con==0){
+            this.get.monthName().then((m)=>{
+                console.log(m.text())
+                monthNameD = m.text()
+                console.log(monthNameD)
+                this.get.dayMonth().then((d)=>{
+                let days=(d.length)
+                selectDay=randomNumInt(0,days)
+                    if(selectDay==0){
+                        dayDep=selectDay
+                        this.get.btnOk().click()
+                    }
+                    else{
+                        dayDep=selectDay-1
+                        this.get.dayMonth().eq(`${dayDep}`).click()
+                        this.get.btnOk().click()
+                    }
+                })
+            
+            })
+        }
+        else{
+            let iM1
+            this.get.monthName().then((m)=>{
+                console.log(m.text())
+                monthNameD = m.text()
+                //console.log(monthNameD)
+                for(i in months){
+                if(monthNameD==`${months[i]} ${year}`){
+                    iM1=parseInt(i)
+                    break
+                }
+                //console.log(iM1)
+                }
+                //console.log(i)
+                selectDay1=randomNumInt(0,(monthsL[i]-1))
+                //console.log(selectDay1)
+                dayDep=selectDay1
+                this.get.dayMonth().eq(`${selectDay1}`).click()
+                this.get.btnOk().click()
+            
+            })
+            
+            
+        }
+        //Returning---------------------------------------
+        
+        this.get.inputReturning().click()
+        this.get.monthName().then((m1)=>{
+            monNameRS=m1.text()
+            console.log(monthNameD)
+            console.log(monNameRS)
+            if(monNameRS==monthNameD){
+                console.log('mismo mes')
+                this.get.dayMonth().then((d)=>{
+                    let days=(d.length)
+                    console.log(dayDep)
+                    this.get.dayMonth().eq(`${dayDep}`).click()
+                })
+                this.get.btnOk().click()
+            }
+            else{
+                console.log('mes distinto')
+                let iM2
+                this.get.inputLastMonth().eq(0).click()
+                this.get.dayMonth().eq(`${dayDep}`).click()
+                this.get.btnOk().click()
+            }
+        })
+        
     }
 }
 export const dateP = new DateP
