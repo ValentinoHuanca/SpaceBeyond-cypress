@@ -24,8 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-require('cypress-xpath');
-
 Cypress.Commands.add('submitLog',(A)=>{
     if(A=='login'){
         cy.get('[data-react-toolbox="app-bar"] button').click();
