@@ -24,6 +24,10 @@ module.exports = defineConfig({
     baseUrl:'https://demo.testim.io'
   },
   env:{
+    ClasificarDest:{
+      planet:['Madan','Shenji','Tongli','Flagstaff','Sant Cugat Del Valles','Shaheying','Tayabamba','Babahoyo','Cuozhou'],
+      color:['Green','Red','Blue','Brown','Purple']
+    },
     Login:{
       username:'John',
       password:'correcto123'
