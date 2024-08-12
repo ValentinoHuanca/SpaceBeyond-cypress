@@ -12,7 +12,7 @@ module.exports = defineConfig({
     mochawesomeReporterOptions:{
       reportFilename: '[status]-[name]-report',
       quiet: true,
-      html:false,
+      html:true,
       json:true
     }
   },

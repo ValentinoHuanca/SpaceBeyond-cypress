@@ -5,20 +5,20 @@ describe('TS| US 2345 | SpaceBeyond | Datepicker | Buscar destino por fecha y gr
         cy.visit('/')
     })
     
-    it.skip('Validar buscar destino por fecha de partida y retorno junto con tipo de pasajero',()=>{
+    it('Validar buscar destino por fecha de partida y retorno junto con tipo de pasajero',()=>{
         dateP.randomDR()
         dateP.randomA()
         dateP.randomC()
         cy.get('.Hero__hero___1FDXn [data-react-toolbox="button"]').click()
         cy.get('[class="theme__card___2nWQb GalleryItem__gallery-item___2P8g-"]').should('be.visible')
     })
-    it.skip('Validar buscar destino solo por fecha de partida y retorno',()=>{
+    it('Validar buscar destino solo por fecha de partida y retorno',()=>{
         dateP.randomDR()
         cy.get('.Hero__hero___1FDXn [data-react-toolbox="button"]').click()
         cy.get('[data-react-toolbox="input"] [tabindex="-1"]').eq(0).should('contain.value','1')
         cy.get('[class="theme__card___2nWQb GalleryItem__gallery-item___2P8g-"]').should('be.visible')
     })
-    it.skip('Validar buscar destino solo por cantidad y tipo de pasajeros',()=>{
+    it('Validar buscar destino solo por cantidad y tipo de pasajeros',()=>{
         dateP.randomA()
         dateP.randomC()
         cy.get('.Hero__hero___1FDXn [data-react-toolbox="button"]').click()
