@@ -1,6 +1,6 @@
 const {galery}= require('../../../support/POM/Galery.Page')
 
-describe('TS',()=>{
+describe('TS|US|clasificar según destino, color y precio',()=>{
     beforeEach('Precondiciones',()=>{
         cy.visit('https://demo.testim.io')
     })
