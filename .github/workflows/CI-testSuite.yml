@@ -1,5 +1,5 @@
-name: US name
-run-name: ${{github.actor}} ran TestSuite in ${{github.ref_name}}
+name: Cypress Testing
+run-name: ${{github.actor}} run TestSuite in ${{github.ref_name}}
 on:
     push:
         branches-ignore: [main]
@@ -27,10 +27,12 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run file cypress/e2e/tests/2945-Login.cy.js
+                    npm run file cypress\e2e\tests\Galery\2546US-ClasificarDestColorPrecio.cy.js
             - name: artefacto mochawesome HTML report
               if: always()
               uses: actions/upload-artifact@v3
               with:
                     name: test-report
-                    path: cypress/reports
+                    path: 
+                      mochawesome-report
+                      result
