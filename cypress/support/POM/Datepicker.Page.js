@@ -21,6 +21,7 @@ class DateP {
     }
     randomD(){
         //se exporta los months
+
         const {months}= Cypress.env('datepicker')
         let monthsL=[30,31,31,30,31,30]
         let year='2024'
