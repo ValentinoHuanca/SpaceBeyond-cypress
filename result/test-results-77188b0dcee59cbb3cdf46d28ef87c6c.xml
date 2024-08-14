@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.324" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-08-14T22:36:44" tests="0" file="cypress\e2e\tests\Galery\2546US-ClasificarDestColorPrecio.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="TS|US|clasificar según destino, color y precio" timestamp="2024-08-14T22:36:44" tests="3" time="2.318" failures="0">
+    <testcase name="TS|US|clasificar según destino, color y precio TC1|Validar seleccionar destino" time="1.612" classname="TC1|Validar seleccionar destino">
+    </testcase>
+    <testcase name="TS|US|clasificar según destino, color y precio TC2|Validar seleccionar color" time="0.329" classname="TC2|Validar seleccionar color">
+    </testcase>
+    <testcase name="TS|US|clasificar según destino, color y precio TC3|Validar deslizar el rango de precios deseado" time="0.299" classname="TC3|Validar deslizar el rango de precios deseado">
+    </testcase>
+  </testsuite>
+</testsuites>
