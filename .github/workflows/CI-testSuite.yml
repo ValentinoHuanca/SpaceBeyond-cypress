@@ -27,12 +27,17 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run file "ubicacbion del testSuite"
-            - name: artefacto mochawesome HTML report
+                    npm run test-reporter **/*/name-test
+            - name: artefacto mochawesome HTML and Json report
               if: always()
               uses: actions/upload-artifact@v3
               with:
-                    name: test-report
-                    path:
-                      mochawesome-report
-                      result
+                    name: report-Mochawesome_${{github.ref_name}}
+                    path: mochawesome-report
+            
+            - name: artefact Junit XML
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                    name: report-Junit_${{github.ref_name}}
+                    path: result
