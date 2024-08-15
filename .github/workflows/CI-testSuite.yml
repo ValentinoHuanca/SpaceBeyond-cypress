@@ -27,12 +27,18 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run file cypress\e2e\tests\Datepicker\2458-DatepickerBuscarDestino.cy.js
-            - name: artefacto mochawesome HTML and Json report
+                    npm run test-reporter **/*/2458-DatepickerBuscarDestino.cy.js
+            - name: artefact mochawesome HTML and Json report
               if: always()
               uses: actions/upload-artifact@v3
               with:
-                    name: test-report
-                    path:
-                      mochawesome-report
-                      result
+                    name: report-Mochawesome_${{github.ref_name}}
+                    path: mochawesome-report
+                      
+            
+            - name: artefact Junit XML report
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                    name: report-Junit_${{github.ref_name}}
+                    path: result
