@@ -27,12 +27,18 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run file cypress\e2e\tests\Galery\2546US-ClasificarDestColorPrecio.cy.js
-            - name: artefacto mochawesome HTML report
+                    npm run test-reporter **/*/2546US-ClasificarDestColorPrecio.cy.js
+            - name: artefact mochawesome HTML and Json report
               if: always()
               uses: actions/upload-artifact@v3
               with:
-                    name: test-report
-                    path: 
-                      mochawesome-report
-                      result
+                    name: mochawesome_${{github.ref_name}}
+                    path: mochawesome-report
+    
+
+            - name: artefact Junit XML report
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                    name: junit_${{github.ref_name}}
+                    path: result
