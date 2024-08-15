@@ -27,7 +27,7 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run file cypress\e2e\tests\Account\2514-LogInAndLogOut.cy.js
+                    npm run test-reporter cypress\e2e\tests\Account\2514-LogInAndLogOut.cy.js
             - name: artefacto mochawesome HTML and Json report
               if: always()
               uses: actions/upload-artifact@v3
