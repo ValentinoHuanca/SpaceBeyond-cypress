@@ -32,7 +32,12 @@ jobs:
               if: always()
               uses: actions/upload-artifact@v3
               with:
-                    name: test-report
-                    path:
-                      mochawesome-report
-                      result
+                    name: report-Mochawesome
+                    path: mochawesome-report
+              
+            - name: artefacto junit XML
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                    name: report-Junit
+                    path: result
