@@ -48,12 +48,12 @@ jobs:
               if: always()
               uses: actions/upload-artifact@v3
               with:
-                    name: report-Mochawesome
+                    name: report-Mochawesome-${{github.ref_name}}
                     path: mochawesome-report
               
             - name: artefacto junit XML
               if: always()
               uses: actions/upload-artifact@v3
               with:
-                    name: report-Junit
+                    name: report-Junit-${{github.ref_name}}
                     path: cypress/junit-report
