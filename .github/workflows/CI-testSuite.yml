@@ -27,7 +27,23 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run test-reporter **/*/2514-LogInAndLogOut.cy.js
+                    npm run test-reporter-chrome **/*/2514-LogInAndLogOut.cy.js
+
+            - name: cypress Run test coverage in firefox
+              uses: cypress-io/github-action@v4
+              with:
+                  browser: firefox
+                  command:
+                    npm run test-reporter-firefox **/*/2514-LogInAndLogOut.cy.js        
+     
+                    
+            - name: cypress Run test coverage in edge
+              uses: cypress-io/github-action@v4
+              with:
+                  browser: edge
+                  command:
+                    npm run test-reporter-edge **/*/2514-LogInAndLogOut.cy.js
+
             - name: artefacto mochawesome HTML and Json report
               if: always()
               uses: actions/upload-artifact@v3
@@ -40,4 +56,4 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                     name: report-Junit
-                    path: result
+                    path: cypress/junit-report
