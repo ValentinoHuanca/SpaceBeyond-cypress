@@ -1,7 +1,8 @@
 {
   "scripts": {
     "test": "cypress open",
-    "test-reporter": "cypress run --browser chrome --spec"
+    "test-reporter": "cypress run --browser chrome --spec",
+    "test-reporter-edge":"cypress run --browser edge --reporter cypress-multi-reporters --reporter-options configFile=config-report-edge.json --spec"
   },
   "license": "MIT",
   "author": "ValentinoHuanca",
