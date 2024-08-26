@@ -40,7 +40,7 @@ jobs:
             - name: cypress Run test coverage in edge
               uses: cypress-io/github-action@v4
               with:
-                  browser: edge
+                  browser: edge 
                   command:
                     npm run test-reporter-edge **/*/2514-LogInAndLogOut.cy.js
 
