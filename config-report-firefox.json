@@ -1,0 +1,15 @@
+{
+    "reporterEnabled":"spec,mocha-junit-reporter,mochawesome",
+    "mochaJunitReporterReporterOptions":{
+        "mochaFile":"cypress/junit-report/firefox-[hash].xml",
+        "toConsole":false,
+        "outputs":true,
+        "testCaseSwitchClasnameAndName":true
+    },
+    "mochawesomeReporterOptions":{
+        "reportFilename":"[status]-[name]-report-firefox",
+        "quiet":true,
+        "html":true,
+        "json":true
+    }
+}

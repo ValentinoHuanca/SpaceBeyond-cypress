@@ -27,7 +27,22 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run test-reporter **/*/2458-DatepickerBuscarDestino.cy.js
+                    npm run test-reporter-chrome **/*/2458-DatepickerBuscarDestino.cy.js
+
+            - name: cypress Run test coverage in firefox
+              uses: cypress-io/github-action@v4
+              with:
+                  browser: firefox
+                  command:
+                    npm run test-reporter-firefox **/*/2458-DatepickerBuscarDestino.cy.js
+
+            - name: cypress Run test coverage in edge
+              uses: cypress-io/github-action@v4
+              with:
+                  browser: edge
+                  command:
+                    npm run test-reporter-edge **/*/2458-DatepickerBuscarDestino.cy.js
+
             - name: artefact mochawesome HTML and Json report
               if: always()
               uses: actions/upload-artifact@v3
@@ -41,4 +56,4 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                     name: report-Junit_${{github.ref_name}}
-                    path: result
+                    path: cypress/junit-report

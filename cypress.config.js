@@ -6,15 +6,7 @@ module.exports = defineConfig({
   screenshotOnRunFailure:false,
   reporterOptions:{
     reporterEnabled:'spec,mocha-junit-reporter,mochawesome',
-    mochaJunitReporterReporterOptions:{
-      mochaFile:'result/test-results-[hash].xml'
-    },
-    mochawesomeReporterOptions:{
-      reportFilename: '[status]-[name]-report',
-      quiet: true,
-      html:true,
-      json:true
-    }
+    configFile:'config-report-chrome.json'
   },
   e2e: {
     specPattern:['cypress/e2e/**/*.cy.{js,jsx,ts,tsx}'],
