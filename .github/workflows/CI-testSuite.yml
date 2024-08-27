@@ -27,7 +27,22 @@ jobs:
               with:
                   browser: chrome
                   command:
-                    npm run test-reporter **/*/name-test
+                    npm run test-reporter-chrome **/*/name-test
+
+            - name: cypress Run test coverage in firefox
+              uses: cypress-io/github-action@v4
+              with:
+                  browser: firefox
+                  command:
+                    npm run test-reporter-firefox **/*/name-test
+
+            - name: cypress Run test coverage in edge
+              uses: cypress-io/github-action@v4
+              with:
+                  browser: edge
+                  command:
+                    npm run test-reporter-edge **/*/name-test
+
             - name: artefacto mochawesome HTML and Json report
               if: always()
               uses: actions/upload-artifact@v3
@@ -40,4 +55,4 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                     name: report-Junit_${{github.ref_name}}
-                    path: result
+                    path: cypress/junit-report
